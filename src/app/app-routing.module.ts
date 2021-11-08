@@ -8,10 +8,10 @@ import { PageNotFoundComponent } from './components/partials/page-not-found/page
 
 const routes: Routes = [
   {
-    path:"", redirectTo:'/adress', pathMatch: 'full'
+    path:"", redirectTo:'/address', pathMatch: 'full'
   },
   {
-    path: "adress", children:[
+    path: "address", children:[
       {
         path:"", component: ListAddressComponent
       },
