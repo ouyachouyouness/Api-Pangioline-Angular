@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from "@angular/forms"
 
 import { HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { SignComponent } from './components/sign/sign.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     ListAddressComponent,
     NavbarComponent,
     PageNotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    SignComponent
   ],
   imports: [
     BrowserModule,

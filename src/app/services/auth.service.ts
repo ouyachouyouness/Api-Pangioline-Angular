@@ -12,5 +12,9 @@ export class AuthService {
     login(data: { email: String, password: String }){
       return this.http.post("http://localhost:8001/api/signin", data);
     }
+
+    sign(data: { email: String, password: String }){
+      return this.http.post("http://localhost:8001/api/signup", data);
+    }
    
 }
