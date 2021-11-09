@@ -5,7 +5,6 @@ import { EditAddressComponent } from './components/edit-address/edit-address.com
 import { ListAddressComponent } from './components/list-address/list-address.component';
 import { LoginComponent } from './components/login/login.component';
 import { PageNotFoundComponent } from './components/partials/page-not-found/page-not-found.component';
-import { AfterAuthGuard } from './guards/after-auth.guard';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -26,7 +25,7 @@ const routes: Routes = [
     ], canActivate:[AuthGuard]
   },
   {
-    path:"login", component: LoginComponent, canActivate:[AfterAuthGuard]
+    path:"login", component: LoginComponent
   },
   {
     path:"**", component: PageNotFoundComponent
