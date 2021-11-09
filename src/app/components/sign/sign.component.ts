@@ -16,11 +16,8 @@ export class SignComponent implements OnInit {
   signForm = new FormGroup({
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null,[ Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
-    age: new FormControl(null, [Validators.required]),
-    nourritue: new FormControl(null, [Validators.required]),
-    famille: new FormControl(null, [Validators.required]),
     Name: new FormControl(null, [Validators.required]),
-    race: new FormControl(null, [Validators.required])
+    
 
 
   })
