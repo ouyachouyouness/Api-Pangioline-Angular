@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AccountService } from 'src/app/services/account.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { TokenService } from 'src/app/services/token.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ export class SignComponent implements OnInit {
 
   })
 
-  constructor(private authService: AuthService, private router: Router, private accountService: AccountService) { }
+  constructor(private tokenService: TokenService ,private authService: AuthService, private router: Router, private accountService: AccountService) { }
 
   ngOnInit(): void {
   }
@@ -36,7 +37,7 @@ export class SignComponent implements OnInit {
   }
 
   handleResponse(res: Object){
-    // this.tokenService.handle(res)
+    this.tokenService.handle(res)
     this.accountService.changestatus(true)
     this.router.navigateByUrl("/address")
   }
