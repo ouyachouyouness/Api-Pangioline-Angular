@@ -14,15 +14,16 @@ import { TokenService } from 'src/app/services/token.service';
 export class SignComponent implements OnInit {
 
   signForm = new FormGroup({
+    name: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null,[ Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
-    Name: new FormControl(null, [Validators.required]),
     
-
-
   })
 
-  constructor(private tokenService: TokenService ,private authService: AuthService, private router: Router, private accountService: AccountService) { }
+  constructor(private tokenService: TokenService ,
+    private authService: AuthService,
+     private router: Router, 
+     private accountService: AccountService) { }
 
   ngOnInit(): void {
   }

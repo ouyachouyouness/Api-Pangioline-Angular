@@ -1,1 +1,36 @@
-<p>edit-address works!</p>
+
+<div class="row">
+    <div class="col-md-4 mt-5 mx-auto">
+        <form [formGroup]= "editPan" *ngIf="!loading" >
+
+            <div class="form-group" >
+                <label for="email">Nourriture</label>
+                <input  formControlName="nourriture" type="text" class="form-control" id="Nourriture">
+            </div>
+            
+           
+            <div class="form-group" >
+                <label for="age">age</label>
+                <input  formControlName="age" type="text" class="form-control" id="age">
+               
+            </div>
+
+            <div class="form-group">
+                <label for="famille">famille</label>
+                <input formControlName="famille" type="famille" name="" id="famille" class="form-control">
+                
+            </div>
+
+            <div class="form-group">
+                <label for="race">race</label>
+                <input formControlName="race" type="race" name="" id="race" class="form-control">
+                
+            </div>
+
+             <!-- {{ signForm.value | json }} -->
+
+            <button  class="btn btn-block btn-primary form-control mt-2" (click)="addPan()" >Ajouter</button>
+
+        </form>
+    </div>
+</div>

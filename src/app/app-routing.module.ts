@@ -4,6 +4,7 @@ import { AddAddressComponent } from './components/add-address/add-address.compon
 import { EditAddressComponent } from './components/edit-address/edit-address.component';
 import { ListAddressComponent } from './components/list-address/list-address.component';
 import { LoginComponent } from './components/login/login.component';
+import { PageOneComponent } from './components/page-one/page-one.component';
 import { PageNotFoundComponent } from './components/partials/page-not-found/page-not-found.component';
 import { SignComponent } from './components/sign/sign.component';
 import { AuthGuard } from './guards/auth.guard';
@@ -24,13 +25,16 @@ const routes: Routes = [
         path:"edit/:id", component: EditAddressComponent
       },
     ], 
-    //canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path:"login", component: LoginComponent
   },
   {
     path:"sign", component: SignComponent
+  },
+  {
+    path:"page-one", component: PageOneComponent
   },
   {
     path:"**", component: PageNotFoundComponent

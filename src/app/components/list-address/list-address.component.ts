@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Address } from './../../models/adress';
 import { AdressService } from 'src/app/services/adress.service';
+import {  Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-list-address',
@@ -8,15 +11,37 @@ import { AdressService } from 'src/app/services/adress.service';
 })
 export class ListAddressComponent implements OnInit {
 
-  constructor(private addressService: AdressService) { }
+  constructor(private addressService: AdressService, private route : Router) { }
+
+  addresses: Address[] = [];
 
   ngOnInit(): void {
-    this.getAllAdresses()
+
+    this.addressService
+        .getAll()
+        .subscribe((res: Address[]) => this.addresses = res);
+
   }
 
-  getAllAdresses(){
-    this.addressService.getAll().subscribe(res => console.log(res)
-    );
+  persistAddress(data: Address) { }
+
+  delete(id: any, index: any) {
+    this.addressService
+      .delete(id)
+                .subscribe((res) => {
+                  this.addresses.splice(index, 1);
+                 
+                });
+  }
+
+  goTo() {
+    this.route.navigateByUrl('address/create');
+  }
+
+  edit(_id: any){
+    this.route.navigateByUrl('address/edit/' + _id);
   }
 
 }
+
+
