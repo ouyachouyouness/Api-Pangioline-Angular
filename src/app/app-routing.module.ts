@@ -8,11 +8,14 @@ import { PageOneComponent } from './components/page-one/page-one.component';
 import { PageNotFoundComponent } from './components/partials/page-not-found/page-not-found.component';
 import { SignComponent } from './components/sign/sign.component';
 import { AuthGuard } from './guards/auth.guard';
+import { AfterAuthGuard } from './guards/after-auth.guard';
+import { AccountComponent } from './components/account/account.component';
 
 const routes: Routes = [
   {
     path:"", redirectTo:'/address', pathMatch: 'full'
   },
+  
   {
     path: "address", children:[
       {
@@ -24,11 +27,19 @@ const routes: Routes = [
       {
         path:"edit/:id", component: EditAddressComponent
       },
-    ], 
-    // canActivate:[AuthGuard]
+      
+      
+    ],  canActivate:[AuthGuard]
+  
+    
+    
+  },
+
+  {
+    path: "account", component: AccountComponent, canActivate:[AuthGuard]
   },
   {
-    path:"login", component: LoginComponent
+    path:"login", component: LoginComponent, canActivate:[AfterAuthGuard]
   },
   {
     path:"sign", component: SignComponent

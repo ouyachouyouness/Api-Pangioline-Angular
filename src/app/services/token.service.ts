@@ -8,8 +8,10 @@ export class TokenService {
   constructor() { }
 
   set(data: any) {
+
     localStorage.setItem('token', data.token);
-    localStorage.setItem('id', data.id);
+    localStorage.setItem('id', data.user._id);
+    localStorage.setItem('userName', data.user.name);
   }
 
   handle(data: any) {
@@ -26,6 +28,10 @@ export class TokenService {
 
   remove() {
     localStorage.removeItem('token');
+  }
+
+  getItem(id: string) {
+    return localStorage.getItem(id);
   }
 
   decode(payload: string) {
@@ -45,10 +51,10 @@ export class TokenService {
     const id = this.getId();
 
     if (token) {
-
       const payload = this.payload(token);
+      
       if (payload) {
-        return id == payload.id;
+        return id == payload._id;
       }
     }
     return false;

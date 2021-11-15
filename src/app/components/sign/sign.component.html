@@ -1,3 +1,4 @@
+<app-navbar></app-navbar>
 
 <div class="row">
     <div class="col-md-4 mt-5 mx-auto">
@@ -20,6 +21,32 @@
                 <input formControlName="password" type="password" name="" id="password" class="form-control">
                 
             </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input formControlName="age" type="text" name="" id="age" class="form-control">
+                
+            </div>
+
+            <div class="form-group">
+                <label for="nourriture">Nourriture</label>
+                <input formControlName="nourriture" type="text" name="" id="nourriture" class="form-control">
+                
+            </div>
+
+            <div class="form-group">
+                <label for="famille">famille</label>
+                <input formControlName="famille" type="text" name="" id="famille" class="form-control">
+                
+            </div>
+
+            <div class="form-group">
+                <label for="race">Race</label>
+                <input formControlName="race" type="text" name="race" id="race" class="form-control">
+                
+            </div>
+
+            
 
              {{ signForm.value | json }}
 

@@ -17,7 +17,11 @@ export class SignComponent implements OnInit {
     name: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required, Validators.email]),
     password: new FormControl(null,[ Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
-    
+    age: new FormControl(null, [Validators.required, Validators.min(1)]),
+    nourriture: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
+    famille: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(6)]),
+    race: new FormControl(null, [Validators.required, Validators.minLength(6), Validators.maxLength(6)])
+
   })
 
   constructor(private tokenService: TokenService ,
@@ -30,7 +34,6 @@ export class SignComponent implements OnInit {
 
   sign(){
     this.authService.sign(this.signForm.value).subscribe(res => this.handleResponse(res)
-    
     )
   }
 

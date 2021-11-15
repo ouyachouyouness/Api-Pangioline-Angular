@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.authService.login(this.loginForm.value).subscribe(res => this.handleResponse(res)
-    )
+    this.authService.login(this.loginForm.value).subscribe((res: any) => {
+      this.handleResponse(res)
+    })
   }
 
   handleResponse(res: Object){

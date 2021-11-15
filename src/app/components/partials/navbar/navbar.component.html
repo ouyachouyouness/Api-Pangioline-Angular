@@ -8,20 +8,26 @@
       <div class="collapse navbar-collapse" id="navbarColor01">
         <ul *ngIf="currentUser" class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link active" routerLink="/address">Home
+            <a class="nav-link active" routerLink="/address">Pangolines
               <span class="visually-hidden">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/address/create">New</a>
+            <a class="nav-link" routerLink="/address/create">Add Pangoline</a>
           </li>
          
         </ul>
 
         <ul  class="navbar-nav ml-auto">
-            <li *ngIf="!currentUser" class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
-            <li *ngIf="!currentUser" class="nav-item"><a routerLink="/sign" class="nav-link">Sign</a></li>
-            <li *ngIf="currentUser" class="nav-item "><button (click)="logout()" class="nav-link btn-logout">Logout</button></li>
+          <ng-container *ngIf="!currentUser">
+            <li  class="nav-item"><a routerLink="/login" class="nav-link">Login</a></li>
+            <li  class="nav-item"><a routerLink="/sign" class="nav-link">Sign</a></li>
+          </ng-container>
+          <ng-container *ngIf="currentUser">
+            <li class="nav-item "><a routerLink="/account" class="nav-link btn-logout" ><b>{{ userName }}</b></a></li>
+            <li class="nav-item "><button (click)="logout()" class="nav-link btn-logout">Logout</button></li>
+          </ng-container>
+
 
         </ul>
         

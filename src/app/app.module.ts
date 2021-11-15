@@ -16,6 +16,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS} from "@angular/common/http"
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { SignComponent } from './components/sign/sign.component';
 import { PageOneComponent } from './components/page-one/page-one.component';
+import { AccountComponent } from './components/account/account.component';
 // import {MatInputModule} from '@angular/forms';
 
 @NgModule({
@@ -28,7 +29,8 @@ import { PageOneComponent } from './components/page-one/page-one.component';
     PageNotFoundComponent,
     LoginComponent,
     SignComponent,
-    PageOneComponent
+    PageOneComponent,
+    AccountComponent
   ],
   imports: [
     BrowserModule,
